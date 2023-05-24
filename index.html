@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Licht bediening</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Light control panel -->
+    <header>
+      <!-- On/off switch -->
+      <div>
+        <label>
+          <input type="checkbox" />
+          <span>On</span>
+          <span>Off</span>
+        </label>
+      </div>
+
+      <!-- Range dim light -->
+      <div>
+        <input type="range" min="1" max="100" value="100" />
+      </div>
+
+      <!-- Color selectors -->
+      <div>
+        <div>
+          <input type="radio" id="color-1" name="color" checked />
+          <label for="color-1">
+            <span>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Check_mark_9x9.svg/768px-Check_mark_9x9.svg.png"
+                alt=""
+              />
+            </span>
+          </label>
+        </div>
+
+        <div>
+          <input type="radio" id="color-2" name="color" />
+          <label for="color-2">
+            <span>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Check_mark_9x9.svg/768px-Check_mark_9x9.svg.png"
+                alt=""
+              />
+            </span>
+          </label>
+        </div>
+
+        <div>
+          <input type="radio" id="color-3" name="color" />
+          <label for="color-3">
+            <span>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Check_mark_9x9.svg/768px-Check_mark_9x9.svg.png"
+                alt=""
+              />
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Partymode -->
+      <div>
+        <input type="checkbox" id="party" />
+        <label for="party">
+          <span>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Check_mark_9x9.svg/768px-Check_mark_9x9.svg.png"
+              alt=""
+            />
+          </span>
+        </label>
+        <p>Partymode</p>
+      </div>
+    </header>
+
+    <!-- Elements for creating the room -->
+    <main>
+      <section>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Elements for random artwork on the wall -->
+    <section>
+      <span></span>
+      <span></span>
+      <span></span>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

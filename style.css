@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
+
+/* ---↓--- CSS reset ---↓--- */
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* ---↓--- Color variables ---↓--- */
+
+:root {
+  --black: black;
+  --white: white;
+  --grey: #363636;
+
+  --yellow: #fff388;
+  --blue: #42f0e6;
+  --pink: #e140e4;
+}
+
+/* ---↓--- Body ---↓--- */
+
+body {
+  display: flex;
+}
+
+/* ---↓--- Header ---↓--- */
+
+header {
+  background-color: #574f3e;
+  width: 40vw;
+  height: 100vh;
+  color: white;
+  border-right: 1.5em solid var(--grey);
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---↓--- On/off switch ---↓--- */
+
+header > div:nth-of-type(1) input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
+
+header > div:nth-of-type(1) label {
+  display: inline-block;
+  position: relative;
+  font-size: 2em;
+  text-align: center;
+  color: var(--black);
+  width: 7em;
+  height: 4em;
+  overflow: hidden;
+  border-bottom: 0.5em solid var(--grey);
+}
+
+header > div:nth-of-type(1) label::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--black);
+  border: 0.5em solid var(--grey);
+  border-bottom: 0;
+}
+
+header > div:nth-of-type(1) label span:nth-of-type(1),
+header > div:nth-of-type(1) label span:nth-of-type(2) {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5em;
+  width: 3em;
+  transition: 0.2s;
+  user-select: none;
+}
+
+header > div:nth-of-type(1) label span:nth-of-type(1) {
+  height: 2.4em;
+  width: 2.75em;
+  left: 0.85em;
+  bottom: 0.4em;
+  background-color: var(--white);
+  transform: rotate(15deg) skewX(15deg);
+}
+
+header > div:nth-of-type(1) label span:nth-of-type(2) {
+  right: 0.5em;
+  bottom: 0;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+header > div:nth-of-type(1) label span:nth-of-type(1)::before,
+header > div:nth-of-type(1) label span:nth-of-type(2)::before {
+  content: "";
+  position: absolute;
+  width: 0.4em;
+  height: 2.45em;
+  bottom: -0.45em;
+  background-color: var(--black);
+  transform: skewY(-65deg);
+}
+
+header > div:nth-of-type(1) label span:nth-of-type(1)::before {
+  left: -0.4em;
+}
+
+header > div:nth-of-type(1) label span:nth-of-type(2)::before {
+  right: -0.375em;
+  background-color: transparent;
+  transform: skewY(65deg);
+}
+
+header > div:nth-of-type(1) input:checked + span:nth-of-type(1) {
+  bottom: 0px;
+  left: 0.5em;
+  height: 2.5em;
+  width: 3em;
+  transform: rotate(0deg) skewX(0deg);
+}
+
+header > div:nth-of-type(1) input:checked + span:nth-of-type(1)::before {
+  background-color: transparent;
+  width: 3.0833em;
+}
+
+header
+  > div:nth-of-type(1)
+  input:checked
+  + span:nth-of-type(1)
+  + span:nth-of-type(2) {
+  bottom: 0.4em;
+  right: 0.8em;
+  height: 2.4em;
+  width: 2.75em;
+  transform: rotate(-15deg) skewX(-15deg);
+}
+
+header
+  > div:nth-of-type(1)
+  input:checked
+  + span:nth-of-type(1)
+  + span:nth-of-type(2)::before {
+  background-color: var(--black);
+}
+
+body:has(header > div:nth-of-type(1) input:checked)
+  main
+  section
+  div:nth-of-type(3) {
+  display: block;
+}
+
+/* ---↓--- Range dim light ---↓--- */
+
+input[type="range"] {
+  transform: rotate(-90deg);
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 18em;
+  height: 18em;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--grey);
+  border-radius: 0;
+  height: 2em;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -1.5em;
+  background: var(--white);
+  height: 5em;
+  width: 2em;
+  border-radius: 0;
+}
+
+head[data--x="9"] + body main section div:nth-of-type(3) {
+  opacity: 0.9;
+}
+head[data--x="8"] + body main section div:nth-of-type(3) {
+  opacity: 0.8;
+}
+head[data--x="7"] + body main section div:nth-of-type(3) {
+  opacity: 0.7;
+}
+head[data--x="6"] + body main section div:nth-of-type(3) {
+  opacity: 0.6;
+}
+head[data--x="5"] + body main section div:nth-of-type(3) {
+  opacity: 0.5;
+}
+head[data--x="4"] + body main section div:nth-of-type(3) {
+  opacity: 0.4;
+}
+head[data--x="3"] + body main section div:nth-of-type(3) {
+  opacity: 0.3;
+}
+head[data--x="2"] + body main section div:nth-of-type(3) {
+  opacity: 0.2;
+}
+head[data--x="1"] + body main section div:nth-of-type(3) {
+  opacity: 0.1;
+}
+head[data--x="0"] + body main section div:nth-of-type(3) {
+  opacity: 0;
+}
+
+/* ---↓--- Select light color ---↓--- */
+
+header > div:nth-of-type(3) {
+  display: flex;
+  gap: 2em;
+}
+
+header > div:nth-of-type(3) input[type="radio"] {
+  display: none;
+}
+
+header > div:nth-of-type(3) label span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5em;
+  height: 5em;
+  cursor: pointer;
+  border-radius: 0;
+  border: 1em solid var(--grey);
+}
+
+header > div:nth-of-type(3) div:nth-of-type(1) label span {
+  background-color: var(--yellow);
+}
+
+header > div:nth-of-type(3) div:nth-of-type(2) label span {
+  background-color: var(--blue);
+}
+
+header > div:nth-of-type(3) div:nth-of-type(3) label span {
+  background-color: var(--pink);
+}
+
+header > div:nth-of-type(3) input[type="radio"] + label span img {
+  opacity: 0;
+  width: 2em;
+}
+
+header > div:nth-of-type(3) input[type="radio"]:checked + label span img {
+  opacity: 1;
+}
+
+body:has(header > div:nth-of-type(3) div:nth-of-type(1) input:checked)
+  main
+  section
+  div:nth-of-type(3) {
+  background-color: var(--yellow);
+  box-shadow: 0px 0px 10em 10em #fff38844, 0px 0px 20em 20em #fff3881c;
+  transition: 2s;
+}
+
+body:has(header > div:nth-of-type(3) div:nth-of-type(2) input:checked)
+  main
+  section
+  div:nth-of-type(3) {
+  background-color: var(--blue);
+  box-shadow: 0px 0px 10em 10em #42f0e745, 0px 0px 20em 20em #42f0e71d;
+  transition: 2s;
+}
+
+body:has(header > div:nth-of-type(3) div:nth-of-type(3) input:checked)
+  main
+  section
+  div:nth-of-type(3) {
+  background-color: var(--pink);
+  box-shadow: 0px 0px 10em 10em #e140e43c, 0px 0px 20em 20em #e140e41a;
+  transition: 2s;
+}
+
+/* ---↓--- Partymode ---↓--- */
+
+@keyframes party {
+  0% {
+    background-color: var(--yellow);
+    box-shadow: 0px 0px 10em 10em #fff38844, 0px 0px 20em 20em #fff3881c;
+  }
+  33.3% {
+    background-color: var(--blue);
+    box-shadow: 0px 0px 10em 10em #42f0e745, 0px 0px 20em 20em #42f0e71d;
+  }
+  66.6% {
+    background-color: var(--pink);
+    box-shadow: 0px 0px 10em 10em #e140e43c, 0px 0px 20em 20em #e140e41a;
+  }
+  100% {
+    background-color: var(--yellow);
+    box-shadow: 0px 0px 10em 10em #fff38844, 0px 0px 20em 20em #fff3881c;
+  }
+}
+
+body:has(header > div:nth-of-type(4) input:checked)
+  main
+  section
+  div:nth-of-type(3) {
+  animation: party 1s linear infinite;
+}
+
+@keyframes bounce {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+body:has(header > div:nth-of-type(4) input:checked) main section > div {
+  margin-top: -0.5em;
+  animation: bounce 0.5s infinite;
+}
+
+header > div:nth-of-type(4) {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+header > div:nth-of-type(4) p {
+  font-size: 1.2em;
+}
+
+header > div:nth-of-type(4) input {
+  display: none;
+}
+
+header > div:nth-of-type(4) label span {
+  display: flex;
+  justify-content: center;
+  background-color: var(--white);
+  align-items: center;
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  border-radius: 0;
+  border: 0.5em solid var(--grey);
+}
+
+header > div:nth-of-type(4) label span img {
+  opacity: 0;
+  width: 1em;
+}
+
+header > div:nth-of-type(4) input:checked + label span img {
+  opacity: 1;
+}
+
+/* ---↓--- Room styling ---↓--- */
+
+main {
+  width: 60vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+    45deg,
+    #574f3e,
+    #574f3e 20px,
+    #26231c 20px,
+    #26231c 80px
+  );
+}
+
+main section {
+  background-color: #1b1a17;
+  width: 60vw;
+  height: 80vh;
+  position: relative;
+  border-bottom: 1em solid black;
+}
+
+/* ---↓--- Light styling ---↓--- */
+
+main section div:nth-of-type(1) {
+  background-color: var(--black);
+  height: 12em;
+  width: 1em;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+main section div:nth-of-type(2) {
+  background-color: var(--black);
+  width: 3em;
+  height: 3em;
+  border-radius: 100em 100em 0em 0em;
+  z-index: 4;
+  position: absolute;
+  top: 11em;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+main section div:nth-of-type(3) {
+  background-color: var(--grey);
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  top: 13.5em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: none;
+}
+
+main section div:nth-of-type(4) {
+  background-color: var(--grey);
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  top: 13.5em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+
+/* ---↓--- Random artwork on the wall ---↓--- */
+
+body > section {
+  width: 15em;
+  height: 20em;
+  background-color: var(--grey);
+  position: fixed;
+  right: -3em;
+  top: 8em;
+  z-index: 1;
+}
+
+body > section span:nth-of-type(1) {
+  display: block;
+  width: 12em;
+  height: 17em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--black);
+  opacity: 0.5;
+  background-image: linear-gradient(135deg, #574f3e 25%, transparent 25%),
+    linear-gradient(225deg, #574f3e 25%, transparent 25%),
+    linear-gradient(45deg, #574f3e 25%, transparent 25%),
+    linear-gradient(315deg, #574f3e 25%, #000000 25%);
+  background-position: 31px 0, 31px 0, 0 0, 0 0;
+  background-size: 31px 31px;
+  background-repeat: repeat;
+}
+
+body > section span:nth-of-type(2) {
+  width: 0.75em;
+  height: 0.75em;
+  background-color: var(--black);
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+}
+
+body > section span:nth-of-type(3) {
+  width: 0.75em;
+  height: 0.75em;
+  background-color: var(--black);
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+}
